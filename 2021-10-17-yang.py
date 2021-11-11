@@ -20,23 +20,24 @@ class ApriltagDetect:
             up.LCD_Refresh()
         
         else:
-            for tag in tags:
-                print(tag.tag_id)
-                # 炸弹
-                if tag.tag_id == 0:
-                    up.LCD_SetForeColor(fore_color)
-                    up.LCD_PutString(0, 0, 'Bomb!!')
-                    up.LCD_Refresh()
-                    up.ADC_IO_SetIOLevel(0,1)
-                # 非炸弹
-                elif tag.tag_id == 1:
-                    up.LCD_PutString(0, 0, 'Energy')
-                    up.LCD_Refresh()
-                    up.ADC_IO_SetIOLevel(0,0)
-                else:
-                    up.LCD_PutString(0, 0, 'Baffle')
-                    up.LCD_Refresh()
-                    up.ADC_IO_SetIOLevel(0,0)
+            #for tag in tags:
+            tag = tags[0]
+            print(tag.tag_id)
+            # 炸弹
+            if tag.tag_id == 0:
+                up.LCD_SetForeColor(fore_color)
+                up.LCD_PutString(0, 0, 'Bomb!!')
+                up.LCD_Refresh()
+                up.ADC_IO_SetIOLevel(0,1)
+            # 非炸弹
+            elif tag.tag_id == 1:
+                up.LCD_PutString(0, 0, 'Energy')
+                up.LCD_Refresh()
+                up.ADC_IO_SetIOLevel(0,0)
+            else:
+                up.LCD_PutString(0, 0, 'Baffle')
+                up.LCD_Refresh()
+                up.ADC_IO_SetIOLevel(0,0)
 
 
 if __name__ == '__main__':
