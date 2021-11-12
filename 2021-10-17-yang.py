@@ -13,7 +13,7 @@ class ApriltagDetect:
     def update_frame(self,frame):
         gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
         tags = self.at_detector.detect(gray)
-        #print(tags)
+        print(tags)
         if len(tags) == 0 :
             up.ADC_IO_SetIOLevel(0,0)
             up.LCD_PutString(0, 0, 'NULL!!')
