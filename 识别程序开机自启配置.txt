@@ -1,0 +1,14 @@
+# 树莓派开机后自动打开lxterminal终端
+sudo nano .profile
+在最后添加:
+	sleep 4
+	lxterminal
+
+
+# 在打开的终端中自动执行相应命令
+sudo nano .bashrc
+在最后添加:
+	/usr/bin/python3 /home/pi/uptench_star/2021-10-17-yang.py
+
+# 每次开机都会自动打开终端
+# 每次打开终端都会自动执行以上命令
